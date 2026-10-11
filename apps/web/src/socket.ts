@@ -41,7 +41,7 @@ export function onSocketStatus(handler: StatusHandler): () => void {
   // reconnect handshake will report "unauthorized" if the session is gone.
   const onError = (err: Error) => {
     handler(false);
-    if (err?.message === "unauthorized") window.dispatchEvent(new CustomEvent(UNAUTHORIZED_EVENT));
+    if (err.message === "unauthorized") window.dispatchEvent(new CustomEvent(UNAUTHORIZED_EVENT));
   };
   s.on("connect", onConnect);
   s.on("disconnect", onDisconnect);
