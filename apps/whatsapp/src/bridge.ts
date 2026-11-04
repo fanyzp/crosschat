@@ -4,8 +4,17 @@ import { translate } from "./i18n.js";
 import { fetchLinkStatus, isWired, markUnwired, markWired, usernameOf } from "./wired.js";
 import type { AnyClient } from "./client.js";
 
-type InboundKind = "text" | "photo" | "video" | "document" | "voice" | "sticker";
-type PostResult = "ok" | "not-linked" | "error";
+type InboundKind = 
+  | "text"
+  | "photo"
+  | "video"
+  | "document"
+  | "voice"
+  | "sticker";
+type PostResult = 
+  | "ok"
+  | "not-linked"
+  | "error";
 
 const log = createLogger("whatsapp");
 
